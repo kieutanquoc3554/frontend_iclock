@@ -32,7 +32,7 @@ const Confirmation = () => {
       }
       const email = localStorage.getItem("email");
       const resp = await fetch(
-        `https://backend-iclock-2.onrender.com/profile/${email}`,
+        `https://backend-iclock.onrender.com/profile/${email}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -132,7 +132,7 @@ const Confirmation = () => {
       const email = localStorage.getItem("email");
 
       const response = await fetch(
-        "https://backend-iclock-2.onrender.com/addorder",
+        "https://backend-iclock.onrender.com/addorder",
         {
           method: "POST",
           headers: {

@@ -13,7 +13,7 @@ const OrderDetail = () => {
   const fetchOrderDetail = async () => {
     try {
       const response = await fetch(
-        `https://backend-iclock-2.onrender.com/orderdetail/${orderId}`
+        `https://backend-iclock.onrender.com/orderdetail/${orderId}`
       );
       if (!response.ok) {
         throw new Error("Không thể lấy chi tiết đơn hàng");
@@ -29,7 +29,7 @@ const OrderDetail = () => {
   const fetchStatusOrder = async () => {
     try {
       const response = await fetch(
-        "https://backend-iclock-2.onrender.com/allstatus"
+        "https://backend-iclock.onrender.com/allstatus"
       );
       if (!response.ok) {
         throw new Error("Không thể lấy trạng thái đơn hàng");
@@ -53,7 +53,7 @@ const OrderDetail = () => {
   const handleDeleteOrder = async () => {
     try {
       const response = await fetch(
-        `https://backend-iclock-2.onrender.com/deleteorder/${orderId}`,
+        `https://backend-iclock.onrender.com/deleteorder/${orderId}`,
         {
           method: "DELETE",
         }

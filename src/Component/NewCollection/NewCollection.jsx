@@ -7,7 +7,7 @@ const NewCollection = forwardRef((props, ref) => {
   const [new_collection, setNew_Collection] = useState([]);
 
   useEffect(() => {
-    fetch("https://backend-iclock-2.onrender.com/newcollection")
+    fetch("https://backend-iclock.onrender.com/newcollection")
       .then((res) => res.json())
       .then((data) => setNew_Collection(data));
   }, []);

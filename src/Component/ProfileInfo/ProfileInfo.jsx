@@ -34,7 +34,7 @@ const ProfileInfo = () => {
   const fetchProvinces = async () => {
     try {
       const response = await fetch(
-        "https://backend-iclock-2.onrender.com/provinces"
+        "https://backend-iclock.onrender.com/provinces"
       );
       if (!response.ok) {
         throw new Error(
@@ -54,7 +54,7 @@ const ProfileInfo = () => {
   const fetchDistricts = async (provinceName) => {
     try {
       const resp = await fetch(
-        `https://backend-iclock-2.onrender.com/districts/${provinceName}`
+        `https://backend-iclock.onrender.com/districts/${provinceName}`
       );
       if (!resp.ok) {
         throw new Error("Đã có lỗi trong quá trình tải danh sách quận/huyện");
@@ -69,7 +69,7 @@ const ProfileInfo = () => {
   const fetchWards = async (provinceName, districtsName) => {
     try {
       const resp = await fetch(
-        `https://backend-iclock-2.onrender.com/wards/${provinceName}/${districtsName}`
+        `https://backend-iclock.onrender.com/wards/${provinceName}/${districtsName}`
       );
       if (!resp.ok) {
         throw new Error("Đã có lỗi trong quá trình tải danh sách phường/xã");
@@ -108,7 +108,7 @@ const ProfileInfo = () => {
       }
       const email = localStorage.getItem("email");
       const resp = await fetch(
-        `https://backend-iclock-2.onrender.com/profile/${email}`,
+        `https://backend-iclock.onrender.com/profile/${email}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -193,7 +193,7 @@ const ProfileInfo = () => {
       const email = localStorage.getItem("email");
       const fullAddress = `${address}, ${selectedWard}, ${selectedDistricts}, ${selectedProvince}`;
       const response = await fetch(
-        `https://backend-iclock-2.onrender.com/update-profile/${email}`,
+        `https://backend-iclock.onrender.com/update-profile/${email}`,
         {
           method: "PUT",
           headers: {
@@ -229,7 +229,7 @@ const ProfileInfo = () => {
           return;
         }
         const response = await fetch(
-          `https://backend-iclock-2.onrender.com/changepassword/${_id}`,
+          `https://backend-iclock.onrender.com/changepassword/${_id}`,
           {
             method: "PUT",
             headers: {

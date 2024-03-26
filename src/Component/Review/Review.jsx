@@ -19,7 +19,7 @@ const Review = (props) => {
   const fetchProductReviews = async () => {
     try {
       const response = await fetch(
-        `https://backend-iclock-2.onrender.com/productReviews/${product._id}`
+        `https://backend-iclock.onrender.com/productReviews/${product._id}`
       );
       const data = await response.json();
       if (data.success) {
@@ -41,7 +41,7 @@ const Review = (props) => {
         // Send a POST request to addReview endpoint with review data using fetch
         const productId = product._id;
         const response = await fetch(
-          `https://backend-iclock-2.onrender.com/addReview/${productId}`,
+          `https://backend-iclock.onrender.com/addReview/${productId}`,
           {
             method: "POST",
             headers: {
@@ -84,7 +84,7 @@ const Review = (props) => {
   const handleDelete = async (reviewId) => {
     try {
       const response = await fetch(
-        `https://backend-iclock-2.onrender.com/deletereview/${reviewId}`,
+        `https://backend-iclock.onrender.com/deletereview/${reviewId}`,
         {
           method: "DELETE",
           headers: {

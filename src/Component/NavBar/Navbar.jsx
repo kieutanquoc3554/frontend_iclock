@@ -56,7 +56,7 @@ const Navbar = () => {
       }
       const email = localStorage.getItem("email");
       const resp = await fetch(
-        `https://backend-iclock-2.onrender.com/profile/${email}`,
+        `https://backend-iclock.onrender.com/profile/${email}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

@@ -20,7 +20,7 @@ const ShopCategory = (props) => {
   const fetchBrand = async () => {
     try {
       const response = await fetch(
-        "https://backend-iclock-2.onrender.com/allbrands"
+        "https://backend-iclock.onrender.com/allbrands"
       );
       const data = await response.json();
       setBrands(data);

@@ -27,7 +27,7 @@ const LoginSignUp = () => {
 
   const login = async () => {
     let responseData;
-    await fetch("https://backend-iclock-2.onrender.com/login", {
+    await fetch("https://backend-iclock.onrender.com/login", {
       method: "POST",
       headers: {
         Accept: "application/form-data",
@@ -59,7 +59,7 @@ const LoginSignUp = () => {
   };
   const signup = async () => {
     let responseData;
-    await fetch("https://backend-iclock-2.onrender.com/signup", {
+    await fetch("https://backend-iclock.onrender.com/signup", {
       method: "POST",
       headers: {
         Accept: "application/form-data",
@@ -78,7 +78,7 @@ const LoginSignUp = () => {
   };
 
   const forgotPassword = async () => {
-    const rsp = await fetch("https://backend-iclock-2.onrender.com/users", {
+    const rsp = await fetch("https://backend-iclock.onrender.com/users", {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -93,7 +93,7 @@ const LoginSignUp = () => {
       return;
     }
     const rspOTP = await fetch(
-      "https://backend-iclock-2.onrender.com/forgotpassword",
+      "https://backend-iclock.onrender.com/forgotpassword",
       {
         method: "POST",
         headers: {
@@ -111,7 +111,7 @@ const LoginSignUp = () => {
 
   const resetPassword = async () => {
     const rsp = await fetch(
-      "https://backend-iclock-2.onrender.com/resetpassword",
+      "https://backend-iclock.onrender.com/resetpassword",
       {
         method: "POST",
         headers: {
@@ -130,7 +130,7 @@ const LoginSignUp = () => {
       alert(data.message);
       // Sau khi cập nhật mật khẩu, chuyển về trang đăng nhập
       // After resetting password, delete OTP
-      await fetch("https://backend-iclock-2.onrender.com/deleteotp", {
+      await fetch("https://backend-iclock.onrender.com/deleteotp", {
         method: "POST",
         headers: {
           Accept: "application/json",
