@@ -27,7 +27,7 @@ const LoginSignUp = () => {
 
   const login = async () => {
     let responseData;
-    await fetch("http://localhost:4000/login", {
+    await fetch("https://backend-iclock-2.onrender.com/login", {
       method: "POST",
       headers: {
         Accept: "application/form-data",
@@ -59,7 +59,7 @@ const LoginSignUp = () => {
   };
   const signup = async () => {
     let responseData;
-    await fetch("http://localhost:4000/signup", {
+    await fetch("https://backend-iclock-2.onrender.com/signup", {
       method: "POST",
       headers: {
         Accept: "application/form-data",
@@ -78,7 +78,7 @@ const LoginSignUp = () => {
   };
 
   const forgotPassword = async () => {
-    const rsp = await fetch("http://localhost:4000/users", {
+    const rsp = await fetch("https://backend-iclock-2.onrender.com/users", {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -92,14 +92,17 @@ const LoginSignUp = () => {
       alert("Email không tồn tại trong hệ thống");
       return;
     }
-    const rspOTP = await fetch("http://localhost:4000/forgotpassword", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email: formData.email }),
-    });
+    const rspOTP = await fetch(
+      "https://backend-iclock-2.onrender.com/forgotpassword",
+      {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email: formData.email }),
+      }
+    );
     const data = await rspOTP.json();
     setState("Nhập mã OTP");
     setFormResetPassword({ ...formResetPassword, email: formData.email });
@@ -107,24 +110,27 @@ const LoginSignUp = () => {
   };
 
   const resetPassword = async () => {
-    const rsp = await fetch("http://localhost:4000/resetpassword", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        otp: formResetPassword.otp,
-        newPassword: formResetPassword.newPassword,
-        email: formResetPassword.email,
-      }),
-    });
+    const rsp = await fetch(
+      "https://backend-iclock-2.onrender.com/resetpassword",
+      {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          otp: formResetPassword.otp,
+          newPassword: formResetPassword.newPassword,
+          email: formResetPassword.email,
+        }),
+      }
+    );
     const data = await rsp.json();
     if (data.success) {
       alert(data.message);
       // Sau khi cập nhật mật khẩu, chuyển về trang đăng nhập
       // After resetting password, delete OTP
-      await fetch("http://localhost:4000/deleteotp", {
+      await fetch("https://backend-iclock-2.onrender.com/deleteotp", {
         method: "POST",
         headers: {
           Accept: "application/json",

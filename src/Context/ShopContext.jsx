@@ -26,13 +26,13 @@ const ShopContextProvider = (props) => {
   const [selectedStrapForProducts, setSelectedStrapForProducts] = useState({});
 
   useEffect(() => {
-    fetch("http://localhost:4000/allproduct")
+    fetch("https://backend-iclock-2.onrender.com/allproduct")
       .then((res) => res.json())
       .then((data) => {
         setAll_Product(data);
 
         if (localStorage.getItem("auth-token")) {
-          fetch("http://localhost:4000/getcart", {
+          fetch("https://backend-iclock-2.onrender.com/getcart", {
             method: "POST",
             headers: {
               Accept: "application/form-data",
@@ -102,7 +102,7 @@ const ShopContextProvider = (props) => {
       };
 
       if (localStorage.getItem("auth-token")) {
-        fetch("http://localhost:4000/addToCart", {
+        fetch("https://backend-iclock-2.onrender.com/addToCart", {
           method: "POST",
           headers: {
             Accept: "application/form-data",
@@ -168,7 +168,7 @@ const ShopContextProvider = (props) => {
 
     // If user is logged in, update the cart on the server
     if (localStorage.getItem("auth-token")) {
-      fetch("http://localhost:4000/removefromcart", {
+      fetch("https://backend-iclock-2.onrender.com/removefromcart", {
         method: "POST",
         headers: {
           Accept: "application/form-data",
@@ -185,7 +185,7 @@ const ShopContextProvider = (props) => {
   };
 
   const applyPromo = async (promoCode) => {
-    await fetch("http://localhost:4000/checkpromocode", {
+    await fetch("https://backend-iclock-2.onrender.com/checkpromocode", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

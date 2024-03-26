@@ -55,11 +55,14 @@ const Navbar = () => {
         setLogin(false);
       }
       const email = localStorage.getItem("email");
-      const resp = await fetch(`http://localhost:4000/profile/${email}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const resp = await fetch(
+        `https://backend-iclock-2.onrender.com/profile/${email}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       if (!resp) {
         setLogin(false);
         throw new Error(`Lỗi: ${response.status} - ${response.statusText}`);
