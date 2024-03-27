@@ -151,3 +151,10 @@
 .empty_track h2 {
   font-weight: 100;
 }
+
+@media (max-width: 500px) {
+  .order-item p {
+    font-size: 10px;
+    font-weight: 500;
+  }
+}
