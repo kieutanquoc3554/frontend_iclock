@@ -248,6 +248,7 @@ const ProfileInfo = () => {
           alert(data.errors);
           return;
         } else {
+          alert("Đổi mật khẩu thành công!");
           alert(data.message);
         }
         await fetchUserData();
@@ -418,7 +419,11 @@ const ProfileInfo = () => {
                     </div>
                     <div className="button-saveChange">
                       {changePasswordMode ? (
-                        <button onClick={changeUserPassword}>
+                        <button
+                          onClick={() =>
+                            changeUserPassword(localStorage.getItem("jsl"))
+                          }
+                        >
                           Cập nhật mật khẩu
                         </button>
                       ) : (
@@ -431,7 +436,6 @@ const ProfileInfo = () => {
                       <button
                         onClick={() => {
                           updateUserInfo();
-                          changeUserPassword(localStorage.getItem("jsl"));
                         }}
                       >
                         Lưu thay đổi

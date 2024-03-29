@@ -18,6 +18,7 @@ import Checkout from "./Component/Checkout/Checkout";
 import Confirmation from "./Component/Confirmation/Confirmation";
 import Order from "./Component/Order/OrderSuccess";
 import OrderDetail from "./Component/OrderDetail/OrderDetail";
+import Member from "./Component/Member/Member";
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
           <Route path="/security" element={<Security />}></Route>
           <Route path="/warranty" element={<Warranty />}></Route>
           <Route path="/eula" element={<EULA />}></Route>
+          <Route path="/member" element={<Member />}></Route>
           <Route path="/cart/checkout" element={<Checkout />}></Route>
           <Route
             path="/cart/checkout/confirm"

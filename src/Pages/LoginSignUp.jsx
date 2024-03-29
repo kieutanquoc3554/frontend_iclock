@@ -40,7 +40,10 @@ const LoginSignUp = () => {
     if (responseData.success) {
       localStorage.setItem("auth-token", responseData.token);
       localStorage.setItem("email", responseData.email);
-      localStorage.setItem("jsl", responseData.id);
+      alert(responseData._id);
+      if (responseData._id) {
+        localStorage.setItem("jsl", responseData._id);
+      }
       if (responseData.role === "Quản trị viên") {
         const confirmation = window.confirm(
           "Bạn được xác định là quản trị viên. Mặc định bạn sẽ ở trang mua sắm. Bạn có muốn điều hướng đến trang quản trị không?"

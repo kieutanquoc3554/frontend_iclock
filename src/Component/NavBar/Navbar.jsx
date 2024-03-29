@@ -43,7 +43,12 @@ const Navbar = () => {
       greetingMessage += `, <strong>${userData.name}</strong>`;
     }
 
-    return <div dangerouslySetInnerHTML={{ __html: greetingMessage + "!" }} />;
+    return (
+      <div
+        className="greeting"
+        dangerouslySetInnerHTML={{ __html: greetingMessage + "!" }}
+      />
+    );
   };
 
   const fetchUserData = async () => {
@@ -170,6 +175,7 @@ const Navbar = () => {
           <div className={"nav-cart-count"}>{getTotalItem()}</div>
           <Link to="/profile">
             <img
+              className="profile_icon"
               style={{ width: "42px", height: "42px" }}
               src={user_icon}
               alt=""
